@@ -4,7 +4,7 @@
     </router-link>
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a @click="logout" class="nav-link px-3" href="#">Sign out</a>
+        <a @click="logout" class="nav-link px-3" href="#"><i class="fas fa-sign-out-alt"></i> Sign out</a>
       </div>
     </div>
   </header>

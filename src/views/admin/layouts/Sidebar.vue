@@ -4,8 +4,14 @@
       <ul class="nav flex-column">
         <li class="nav-item">
           <router-link :to="{name:'AdminDashboard'}" class="nav-link active" aria-current="page" href="#">
-            <span data-feather="home"></span>
+            <i class="fas fa-home"></i>
             Dashboard
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link :to="{name:'AdminDashboard'}" class="nav-link active" aria-current="page" href="#">
+            <i class="fas fa-list"></i>
+            Transition
           </router-link>
         </li>
       </ul>

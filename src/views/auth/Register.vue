@@ -30,6 +30,20 @@
               </div>
             </div>
             <div class="mb-3">
+              <select :class="{ 'is-invalid': errors['currency'] }" id="currency" v-model="form.currency" type="number"
+                      class="form-control ">
+                <option value="USD">USD</option>
+                <option value="BDT">BDT</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="AUD">AUD</option>
+                <div v-if="errors['currency']" class="invalid-feedback">
+                  {{ errors['currency'][0] }}
+                </div>
+              </select>
+            </div>
+            <div class="mb-3">
               <select :class="{ 'is-invalid': errors['gender'] }" id="gender" v-model="form.gender" type="number"
                       class="form-control ">
                 <option value="">Gender</option>
@@ -40,9 +54,6 @@
                   {{ errors['gender'][0] }}
                 </div>
               </select>
-            </div>
-            <div class="mb-3">
-              <DatePickerComponent title="SELECT DATE OF BIRTH" v_model="date_of_birth"/>
             </div>
             <div class="mb-3">
               <textarea v-model="form.address" class="form-control "
@@ -84,15 +95,14 @@ import NotificationService from "@/services/notification.service";
 import DatePickerComponent from "@/components/picker/DatePicker";
 
 export default {
-  name      : "Register",
-  components: {DatePickerComponent},
-
+  name   : "Register",
   data   : () => ({
     form  : {
       name            : "",
       email           : "",
       phone           : "",
       date_of_birth   : "",
+      currency        : "USD",
       gender          : "",
       address         : "",
       password        : "",

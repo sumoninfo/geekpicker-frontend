@@ -12,6 +12,7 @@
               <h2>{{ user.name }}</h2>
               <p><strong>Email: </strong> {{ user.email }} </p>
               <p><strong>Phone: </strong> {{ user.phone }} </p>
+              <p><strong>Currency: </strong> <span class="badge bg-primary">{{ user.currency }}</span> </p>
               <p><strong>Date of birth: </strong> {{ user.date_of_birth | dateFormat }} </p>
               <p><strong>Address: </strong> {{ user.address }} </p>
               <p><strong>Gender: </strong> {{ user.gender }} </p>
