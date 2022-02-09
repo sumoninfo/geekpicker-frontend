@@ -4,6 +4,7 @@ import router from './router'
 import store  from './store'
 import './scss/main.scss'
 import 'bootstrap'
+import 'vue-multiselect/dist/vue-multiselect.min.css'
 // Filters
 import './filters/filters.js'
 //sweetalert2
