@@ -7,12 +7,11 @@
     <form @submit.prevent="store()">
       <div class="row col-lg-9 mx-auto shadow-lg p-5">
         <div class="mb-3 col-md-6 mx-auto text-center">
-          <label for="user_id" class="form-label">From Currency: </label>
-          <span class="badge bg-primary"> {{ user.currency }}</span>
+          <label class="form-label">From <span class="badge bg-primary"> {{ user.currency }}</span> Currency: </label>
         </div>
         <div class="clearfix"></div>
         <div class="mb-3 col-md-6">
-          <label for="user_id" class="form-label">To Account</label>
+          <label for="user_id" class="form-label">Account holder</label>
           <drop-down :class_name="{ 'is-invalid': errors['user_id'] }" title="User" v_model="user"/>
           <div v-if="errors['user_id']" class="invalid-feedback">
             {{ errors['user_id'][0] }}

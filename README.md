@@ -1,14 +1,14 @@
-# jacos-frontend
+# Geekpicker-frontend
 
 ## Installation
 
 ### Clone the repository
 
-    git clone https://github.com/sumoninfo/jacos-frontend.git
+    git clone https://github.com/sumoninfo/geekpicker-frontend.git
 
 ### Switch to the repo folder
 
-    cd jacos-frontend
+    cd geekpicker-frontend
 
 ### Copy the example env file and make the required configuration changes in the .env file
 

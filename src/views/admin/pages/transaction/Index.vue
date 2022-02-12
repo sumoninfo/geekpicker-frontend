@@ -33,7 +33,7 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Date</th>
-                <th scope="col">Account holder name</th>
+                <th scope="col">Account holder</th>
                 <th scope="col">From</th>
                 <th scope="col">To</th>
                 <th scope="col" style="width: 80px;">Action</th>
