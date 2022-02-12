@@ -5,3 +5,7 @@ import moment from "moment";
 Vue.filter("dateFormat", function (date) {
     return date != null ? moment(String(date)).format(process.env.VUE_APP_DATE_FORMAT) : ''
 });
+
+Vue.filter("numberFormat", function (number, decimals=2) {
+    return parseFloat(number).toFixed(decimals).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+});

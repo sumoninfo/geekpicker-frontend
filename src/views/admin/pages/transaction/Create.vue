@@ -2,27 +2,35 @@
   <div>
     <div
         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 class="h2">Create Transition</h1>
+      <h1 class="h2">Create Transaction</h1>
     </div>
     <form @submit.prevent="store()">
-      <div class="row">
-        <div class="mb-3 col-md-4">
-          <label for="date" class="form-label">Date</label>
-          <DatePickerComponent title="Date" v_model="date"/>
+      <div class="row col-lg-9 mx-auto shadow-lg p-5">
+        <div class="mb-3 col-md-6 mx-auto text-center">
+          <label for="user_id" class="form-label">From Currency: </label>
+          <span class="badge bg-primary"> {{ user.currency }}</span>
         </div>
-        <div class="mb-3 col-md-4">
-          <label for="user_id" class="form-label">User</label>
+        <div class="clearfix"></div>
+        <div class="mb-3 col-md-6">
+          <label for="user_id" class="form-label">To Account</label>
           <drop-down :class_name="{ 'is-invalid': errors['user_id'] }" title="User" v_model="user"/>
           <div v-if="errors['user_id']" class="invalid-feedback">
             {{ errors['user_id'][0] }}
           </div>
         </div>
-        <div class="mb-3 col-md-4">
+        <div class="mb-3 col-md-6">
+          <label for="date" class="form-label">Date</label>
+          <DatePickerComponent title="Date" v_model="date"/>
+        </div>
+        <div class="mb-3 col-md-6 mx-auto">
           <label for="amount" class="form-label">Amount</label>
-          <input v-model="form.amount" type="text" class="form-control" id="amount">
+          <input v-model="form.amount" type="number" class="form-control" id="amount" placeholder="0.00">
+        </div>
+        <div class="clearfix"></div>
+        <div class="mb-3 col-md-6 mx-auto">
+          <button type="submit" class="btn btn-primary w-100">Save</button>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 </template>
@@ -34,9 +42,10 @@ import moment              from "moment";
 import ApiService          from "@/services/api.service";
 import JwtService          from "@/services/jwt.service";
 import NotificationService from "@/services/notification.service";
+import {mapState}          from "vuex";
 
 export default {
-  name      : "TransitionCreate",
+  name      : "TransactionCreate",
   components: {DatePickerComponent, DropDown},
   data      : () => ({
     errors: [],
@@ -46,11 +55,16 @@ export default {
       amount: '',
     }
   }),
+  computed  : {
+    ...mapState({
+      user: state => state.auth.user
+    }),
+  },
   methods   : {
     store() {
-      ApiService.post('/transitions', this.form).then((res) => {
+      ApiService.post('/transactions', this.form).then((res) => {
         this.errors = [];
-        //this.$router.push({name: "TransitionList"});
+        this.$router.push({name: "TransactionList"});
         NotificationService.success(res.data.message);
       }).catch(error => {
         this.errors = error.response.data.errors;

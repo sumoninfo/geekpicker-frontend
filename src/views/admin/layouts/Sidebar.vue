@@ -9,9 +9,9 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link :to="{name:'TransitionList'}" class="nav-link active">
+          <router-link :to="{name:'TransactionList'}" class="nav-link active">
             <i class="fas fa-list"></i>
-            Transition
+            Transaction
           </router-link>
         </li>
       </ul>

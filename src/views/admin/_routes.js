@@ -7,28 +7,28 @@ const AdminRoutes = [
             title: 'Admin Dashboard'
         }
     },
-    // ===========Transition Section===============
+    // ===========Transaction Section===============
     {
-        path     : 'transition/create',
-        name     : 'TransitionCreate',
-        component: () => import('./pages/transition/Create'),
+        path     : 'transaction/create',
+        name     : 'TransactionCreate',
+        component: () => import('./pages/transaction/Create'),
         meta     : {
-            title: 'Transition Create'
+            title: 'Transaction Create'
         }
     },
     {
-        path     : 'transition/list',
-        name     : 'TransitionList',
-        component: () => import('./pages/transition/Index'),
+        path     : 'transaction/list',
+        name     : 'TransactionList',
+        component: () => import('./pages/transaction/Index'),
         meta     : {
-            title: 'Transition List'
+            title: 'Transaction List'
         }
     }, {
-        path     : 'transition/edit/:id',
-        name     : 'TransitionEdit',
-        component: () => import('./pages/transition/Create'),
+        path     : 'transaction/edit/:id',
+        name     : 'TransactionEdit',
+        component: () => import('./pages/transaction/Create'),
         meta     : {
-            title: 'Transition Edit'
+            title: 'Transaction Edit'
         }
     },
 ];

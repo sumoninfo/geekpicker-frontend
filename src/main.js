@@ -7,6 +7,7 @@ import 'bootstrap'
 import 'vue-multiselect/dist/vue-multiselect.min.css'
 // Filters
 import './filters/filters.js'
+import './globalComponents'
 //sweetalert2
 window.Swal  = require('sweetalert2');
 //Toast
