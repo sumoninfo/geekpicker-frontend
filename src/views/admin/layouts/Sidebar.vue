@@ -9,9 +9,27 @@
           </router-link>
         </li>
         <li class="nav-item">
+          <router-link :to="{name:'Profile'}" class="nav-link active">
+            <i class="fas fa-user"></i>
+            Profile
+          </router-link>
+        </li>
+        <li class="nav-item">
           <router-link :to="{name:'TransactionList'}" class="nav-link active">
             <i class="fas fa-list"></i>
             Transaction
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link :to="{name:'TotalAmountConvertedReport'}" class="nav-link active">
+            <i class="fas fa-chart-area"></i>
+            Total Amount Converted Report
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link :to="{name:'ThirdHighestAmountReport'}" class="nav-link active">
+            <i class="fas fa-chart-bar"></i>
+            Third Highest Amount Report
           </router-link>
         </li>
       </ul>

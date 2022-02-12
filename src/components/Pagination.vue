@@ -10,7 +10,7 @@
             </select>
         </div>
         <div class="show">
-            Showing {{ pagination.from }} to {{ pagination.to }} of {{ pagination.total | numberFormat(2) }} entries
+            Showing {{ pagination.from }} to {{ pagination.to }} of {{ pagination.total | numberFormat(0) }} entries
         </div>
         <div>
             <ul class="pagination justify-content-center m-0">

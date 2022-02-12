@@ -6,6 +6,13 @@ const AdminRoutes = [
         meta     : {
             title: 'Admin Dashboard'
         }
+    }, {
+        path     : '/profile',
+        name     : 'Profile',
+        component: () => import('./pages/Profile'),
+        meta     : {
+            title: 'Profile'
+        }
     },
     // ===========Transaction Section===============
     {
@@ -29,6 +36,22 @@ const AdminRoutes = [
         component: () => import('./pages/transaction/Create'),
         meta     : {
             title: 'Transaction Edit'
+        }
+    },
+    //===========ss===================
+    {
+        path     : '/reports/total-amount-converted',
+        name     : 'TotalAmountConvertedReport',
+        component: () => import('./pages/reports/TotalAmountConverted'),
+        meta     : {
+            title: 'Total Amount Converted Report'
+        }
+    },{
+        path     : '/reports/third-highest-amount',
+        name     : 'ThirdHighestAmountReport',
+        component: () => import('./pages/reports/ThirdHighestAmount'),
+        meta     : {
+            title: 'Third Highest Amount Report'
         }
     },
 ];
