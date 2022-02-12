@@ -51,7 +51,7 @@
                   </td>
                   <td>
                     Currency: {{ list.to_currency }}<br>
-                    Amount: {{ list.to_amount | numberFormat }}
+                    Converted Amount: {{ list.to_amount | numberFormat }}
                   </td>
                   <td>
                     <delete-action :id="list.id"/>
